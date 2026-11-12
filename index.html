@@ -5,18 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Baxter Mill Caravan Park | Llanfair Caereinion, Welshpool</title>
   <meta name="description" content="Baxter Mill Caravan Park – a peaceful riverside caravan park near Llanfair Caereinion, Welshpool, in the heart of Mid Wales.">
+  <meta name="theme-color" content="#1d3328">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="site-header">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="header">
   <div class="wrap nav">
-    <a href="#top" class="brand">Baxter Mill <span>Caravan Park</span></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
-    <nav id="menu" class="menu">
+    <a href="#top" class="brand" aria-label="Baxter Mill Caravan Park – home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M6 24c4-6 9-8 14-5s10 1 14-4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M7 29c4-2 8-2 13 0s9 2 13 0" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <span class="brand-text">Baxter Mill<small>Caravan Park</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">
+      <span class="bars" aria-hidden="true"></span><span class="sr">Menu</span>
+    </button>
+    <nav id="menu" class="menu" aria-label="Main">
       <a href="#about">About</a>
       <a href="#stay">Stay</a>
       <a href="#facilities">Facilities</a>
@@ -27,125 +39,149 @@
   </div>
 </header>
 
-<main id="top">
+<main id="main">
 
   <!-- HERO -->
-  <section class="hero">
-    <svg class="hero-art" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <section class="hero" id="top">
+    <svg class="hero-art" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#f7d9a8"/><stop offset="1" stop-color="#fbeedb"/>
+        <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#22392f"/>
+          <stop offset=".55" stop-color="#6b7c62"/>
+          <stop offset="1" stop-color="#e9c89a"/>
+        </linearGradient>
+        <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#e9c89a" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#2c4a44"/>
         </linearGradient>
       </defs>
-      <rect width="1440" height="600" fill="url(#sky)"/>
-      <circle cx="1120" cy="170" r="70" fill="#f3b562" opacity=".8"/>
-      <g transform="translate(0,110)">
-      <path d="M0 330 C200 240 380 280 560 250 S920 180 1100 240 1340 230 1440 260 V600 H0Z" fill="#8fae7e"/>
-      <path d="M0 400 C220 330 420 380 640 340 S1040 300 1240 350 1400 340 1440 350 V600 H0Z" fill="#5f8a5a"/>
-      <path d="M0 470 C260 420 520 460 760 430 S1180 410 1440 440 V600 H0Z" fill="#3f6b45"/>
-      <path d="M0 540 C300 500 620 560 900 520 S1300 500 1440 525 V600 H0Z" fill="#7fb3c6" opacity=".9"/>
-      <g fill="#2f5236">
-        <path d="M180 470 l18 -60 18 60z"/><path d="M215 465 l14 -46 14 46z"/>
-        <path d="M1240 440 l20 -66 20 66z"/><path d="M1280 445 l15 -50 15 50z"/>
+      <rect width="1440" height="800" fill="url(#dusk)"/>
+      <circle cx="1060" cy="430" r="80" fill="#f4d7a6" opacity=".55"/>
+      <path d="M0 470 C180 400 330 430 500 395 S820 330 1010 400 1290 380 1440 410 V800 H0Z" fill="#4c6650"/>
+      <path d="M0 540 C220 480 420 520 640 485 S1040 450 1240 500 1400 490 1440 495 V800 H0Z" fill="#35503d"/>
+      <path d="M0 610 C260 570 520 600 760 575 S1180 555 1440 585 V800 H0Z" fill="#253d2e"/>
+      <g fill="#1a2d22">
+        <path d="M140 600 l22 -78 22 78z"/><path d="M182 596 l16 -56 16 56z"/><path d="M98 604 l14 -48 14 48z"/>
+        <path d="M1220 585 l24 -86 24 86z"/><path d="M1264 590 l17 -60 17 60z"/><path d="M1300 594 l12 -40 12 40z"/>
       </g>
-      <g>
-        <rect x="560" y="420" width="90" height="38" rx="10" fill="#fffaf2"/>
-        <rect x="574" y="428" width="22" height="14" rx="3" fill="#7fb3c6"/>
-        <rect x="610" y="428" width="22" height="14" rx="3" fill="#7fb3c6"/>
-        <circle cx="590" cy="460" r="7" fill="#333"/>
-        <rect x="690" y="430" width="70" height="30" rx="8" fill="#fffaf2"/>
-        <rect x="702" y="437" width="18" height="11" rx="2" fill="#7fb3c6"/>
-        <circle cx="712" cy="462" r="6" fill="#333"/>
+      <g opacity=".95">
+        <rect x="610" y="545" width="92" height="38" rx="10" fill="#f6efe1"/>
+        <rect x="624" y="553" width="22" height="13" rx="3" fill="#f2b45c"/>
+        <rect x="660" y="553" width="22" height="13" rx="3" fill="#f2b45c"/>
+        <circle cx="640" cy="585" r="6" fill="#152219"/>
+        <rect x="738" y="555" width="70" height="30" rx="8" fill="#f6efe1"/>
+        <rect x="750" y="562" width="18" height="11" rx="2" fill="#f2b45c"/>
+        <circle cx="760" cy="587" r="5" fill="#152219"/>
       </g>
+      <path d="M0 655 C300 630 620 680 900 650 S1300 630 1440 645 V800 H0Z" fill="url(#water)"/>
+      <g stroke="#f4d7a6" stroke-width="2" stroke-linecap="round" opacity=".45">
+        <path d="M980 690 h90"/><path d="M1010 708 h50"/><path d="M380 700 h70"/><path d="M1180 720 h40"/>
       </g>
     </svg>
     <div class="wrap hero-content">
       <p class="eyebrow">Llanfair Caereinion · Welshpool · Powys</p>
-      <h1>Peaceful riverside caravanning in the heart of Mid Wales</h1>
+      <h1>Peaceful riverside caravanning in the <em>heart of Mid Wales</em></h1>
       <p class="lead">Tucked away down a quiet country lane beside the river, Baxter Mill is the place to slow down, breathe in the fresh air and enjoy the Welsh countryside.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn">Check availability</a>
-        <a href="#find-us" class="btn btn-ghost">How to find us</a>
+        <a href="#contact" class="btn btn-light">Check availability</a>
+        <a href="#find-us" class="btn btn-outline">How to find us</a>
       </div>
     </div>
   </section>
 
+  <!-- FACTS STRIP -->
+  <div class="facts">
+    <ul class="wrap">
+      <li><strong>2</strong><span>spacious fields</span></li>
+      <li><strong>Riverside</strong><span>setting</span></li>
+      <li><strong>9 miles</strong><span>from Welshpool</span></li>
+      <li><strong>Quiet</strong><span>country lane location</span></li>
+    </ul>
+  </div>
+
   <!-- ABOUT -->
   <section id="about" class="section">
-    <div class="wrap two-col">
-      <div>
-        <p class="eyebrow">Welcome</p>
+    <div class="wrap split">
+      <div class="split-head">
+        <p class="eyebrow">01 · Welcome</p>
         <h2>A hidden gem by the river</h2>
-        <p>Baxter Mill Caravan Park sits at the bottom of a mile-long lane, right beside the river, about nine miles from the market town of Welshpool. The park is laid out across two main fields, giving everyone plenty of space and big open views of the surrounding hills.</p>
+      </div>
+      <div class="prose">
+        <p class="big">Baxter Mill Caravan Park sits at the bottom of a mile-long lane, right beside the river, about nine miles from the market town of Welshpool.</p>
+        <p>The park is laid out across two main fields, giving everyone plenty of space and big open views of the surrounding hills.</p>
         <p>Whether you're after a quiet weekend away, a base for walking and exploring, or a spot to cast a line and watch the world go by, you'll find a warm Welsh welcome here.</p>
         <!-- EDIT: add a sentence or two about the owners / history of the mill -->
       </div>
-      <ul class="highlights">
-        <li><strong>2</strong><span>spacious fields</span></li>
-        <li><strong>Riverside</strong><span>setting</span></li>
-        <li><strong>9 miles</strong><span>from Welshpool</span></li>
-        <li><strong>Quiet</strong><span>country lane location</span></li>
-      </ul>
     </div>
   </section>
 
   <!-- STAY -->
-  <section id="stay" class="section alt">
+  <section id="stay" class="section tint">
     <div class="wrap">
-      <p class="eyebrow">Stay with us</p>
-      <h2>Ways to stay</h2>
-      <!-- EDIT: remove any of these cards that don't apply, and set your real prices -->
-      <div class="cards">
-        <article class="card">
+      <div class="section-head">
+        <p class="eyebrow">02 · Stay with us</p>
+        <h2>Ways to stay</h2>
+      </div>
+      <!-- EDIT: remove any of these that don't apply, and set your real prices -->
+      <ol class="stays">
+        <li>
+          <span class="num">i</span>
           <h3>Touring pitches</h3>
           <p>Bring your own caravan or motorhome and pitch up in our open fields.</p>
           <p class="price">From £<span class="todo">XX</span> per night</p>
-        </article>
-        <article class="card">
+        </li>
+        <li>
+          <span class="num">ii</span>
           <h3>Holiday homes</h3>
           <p>Own your own static caravan in a peaceful riverside spot – ask us about available plots.</p>
           <p class="price"><span class="todo">Ask for details</span></p>
-        </article>
-        <article class="card">
+        </li>
+        <li>
+          <span class="num">iii</span>
           <h3>Seasonal pitches</h3>
           <p>Leave your tourer with us for the season and come and go as you please.</p>
           <p class="price">From £<span class="todo">XXX</span> per season</p>
-        </article>
-      </div>
+        </li>
+      </ol>
       <p class="note">Open <span class="todo">March – October</span>. Dogs welcome on leads <span class="todo">(confirm)</span>.</p>
     </div>
   </section>
 
   <!-- FACILITIES -->
   <section id="facilities" class="section">
-    <div class="wrap">
-      <p class="eyebrow">On site</p>
-      <h2>Facilities</h2>
-      <!-- EDIT: tick off what you really have -->
-      <ul class="facilities">
-        <li>⚡ Electric hook-ups</li>
-        <li>🚿 Toilets &amp; showers</li>
-        <li>💧 Fresh water points</li>
-        <li>🗑️ Waste &amp; chemical disposal</li>
-        <li>🐕 Dog-friendly</li>
-        <li>🎣 River close by</li>
-        <li>🌳 Open grassy fields</li>
-        <li>🚗 Parking by your pitch</li>
+    <div class="wrap split">
+      <div class="split-head">
+        <p class="eyebrow">03 · On site</p>
+        <h2>Facilities</h2>
+        <p class="muted">Everything you need for a comfortable stay, and not much more – that's the point.</p>
+      </div>
+      <!-- EDIT: delete any line you don't really have -->
+      <ul class="checklist">
+        <li>Electric hook-ups</li>
+        <li>Toilets &amp; showers</li>
+        <li>Fresh water points</li>
+        <li>Waste &amp; chemical disposal</li>
+        <li>Dog-friendly</li>
+        <li>River close by</li>
+        <li>Open grassy fields</li>
+        <li>Parking by your pitch</li>
       </ul>
     </div>
   </section>
 
   <!-- GALLERY -->
-  <section class="section alt">
+  <section class="section dark">
     <div class="wrap">
-      <p class="eyebrow">Gallery</p>
-      <h2>Life at Baxter Mill</h2>
-      <!-- EDIT: replace each placeholder div with <img src="images/yourphoto.jpg" alt="..."> -->
-      <div class="gallery">
-        <div class="ph">The river</div>
-        <div class="ph">Top field</div>
-        <div class="ph">Bottom field</div>
-        <div class="ph">Sunset over the hills</div>
+      <div class="section-head">
+        <p class="eyebrow">04 · Gallery</p>
+        <h2>Life at Baxter Mill</h2>
+      </div>
+      <!-- EDIT: replace each placeholder <div class="ph"> with <img src="images/yourphoto.jpg" alt="..."> -->
+      <div class="mosaic">
+        <div class="ph ph-a"><span>The river</span></div>
+        <div class="ph ph-b"><span>Top field</span></div>
+        <div class="ph ph-c"><span>Bottom field</span></div>
+        <div class="ph ph-d"><span>Sunset over the hills</span></div>
       </div>
     </div>
   </section>
@@ -153,22 +189,24 @@
   <!-- EXPLORE -->
   <section id="explore" class="section">
     <div class="wrap">
-      <p class="eyebrow">Nearby</p>
-      <h2>Things to do in the area</h2>
-      <div class="cards">
-        <article class="card">
+      <div class="section-head">
+        <p class="eyebrow">05 · Nearby</p>
+        <h2>Things to do in the area</h2>
+      </div>
+      <div class="explore">
+        <article>
           <h3>Welshpool &amp; Llanfair Light Railway</h3>
           <p>Ride a heritage steam train through the Banwy valley from Llanfair Caereinion to Welshpool.</p>
         </article>
-        <article class="card">
+        <article>
           <h3>Powis Castle &amp; Garden</h3>
           <p>A medieval castle with world-famous terraced gardens just outside Welshpool.</p>
         </article>
-        <article class="card">
+        <article>
           <h3>Lake Vyrnwy</h3>
           <p>A stunning Victorian reservoir with walking and cycling trails, an RSPB nature reserve and great views.</p>
         </article>
-        <article class="card">
+        <article>
           <h3>Montgomery Canal</h3>
           <p>Peaceful towpath walks, wildlife and boat trips from Welshpool.</p>
         </article>
@@ -177,44 +215,44 @@
   </section>
 
   <!-- FIND US -->
-  <section id="find-us" class="section alt">
-    <div class="wrap two-col">
+  <section id="find-us" class="section tint">
+    <div class="wrap split split-even">
       <div>
-        <p class="eyebrow">Find us</p>
+        <p class="eyebrow">06 · Find us</p>
         <h2>Getting here</h2>
         <address>
           Baxter Mill Caravan Park<br>
           Llanfair Caereinion<br>
           Welshpool<br>
           Powys<br>
-          SY21 0DH
+          <strong>SY21 0DH</strong>
         </address>
         <p>We're about nine miles west of Welshpool. Once you turn onto our lane, follow it for around a mile down to the river – the park is on the right-hand side.</p>
         <!-- EDIT: add turn-by-turn directions from the A458 if you like -->
-        <p class="small">Sat-nav: use postcode <strong>SY21 0DH</strong>, but please follow our directions for the final stretch.</p>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Baxter+Mill+Caravan+Park+SY21+0DH" target="_blank" rel="noopener">Open in Google Maps</a>
+        <p class="callout">Sat-nav: use postcode <strong>SY21 0DH</strong>, but please follow our directions for the final stretch.</p>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Baxter+Mill+Caravan+Park+SY21+0DH" target="_blank" rel="noopener">Open in Google Maps</a>
       </div>
       <div class="map">
         <iframe title="Map showing Baxter Mill Caravan Park" loading="lazy"
-          src="https://maps.google.com/maps?q=SY21%200DH&z=13&output=embed"></iframe>
+          src="https://maps.google.com/maps?q=SY21%200DH&amp;z=13&amp;output=embed"></iframe>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section">
-    <div class="wrap two-col">
+    <div class="wrap split split-even">
       <div>
-        <p class="eyebrow">Book &amp; enquire</p>
+        <p class="eyebrow">07 · Book &amp; enquire</p>
         <h2>Get in touch</h2>
         <p>To check availability or book a pitch, give us a call or send a message and we'll get back to you.</p>
         <ul class="contact-list">
-          <li>📞 <a href="tel:+440000000000" class="todo">01938 XXX XXX</a></li>
-          <li>✉️ <a href="mailto:info@example.com" class="todo">your@email.co.uk</a></li>
+          <li><span class="label">Phone</span><a href="tel:+440000000000" class="todo">01938 XXX XXX</a></li>
+          <li><span class="label">Email</span><a href="mailto:info@example.com" class="todo">your@email.co.uk</a></li>
         </ul>
       </div>
       <form class="form" id="enquiry">
-        <label>Name<input name="name" required></label>
+        <label>Name<input name="name" autocomplete="name" required></label>
         <label>Email or phone<input name="contact" required></label>
         <div class="row">
           <label>Arrive<input type="date" name="arrive"></label>
@@ -239,34 +277,24 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
-    <p><strong>Baxter Mill Caravan Park</strong> · Llanfair Caereinion, Welshpool, Powys, SY21 0DH</p>
-    <p class="small">© <span id="year"></span> Baxter Mill Caravan Park. Croeso i Gymru – Welcome to Wales.</p>
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">Baxter Mill <em>Caravan Park</em></p>
+      <p>Llanfair Caereinion, Welshpool, Powys, SY21 0DH</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#stay">Stay</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#find-us">Find us</a>
+      <a href="#contact">Book</a>
+    </nav>
+  </div>
+  <div class="wrap footer-base">
+    <p>© <span id="year"></span> Baxter Mill Caravan Park</p>
+    <p lang="cy">Croeso i Gymru – Welcome to Wales</p>
   </div>
 </footer>
 
-<script>
-  // EDIT: set this to the email address enquiries should go to
-  const ENQUIRY_EMAIL = "info@example.com";
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.getElementById('menu');
-  toggle.addEventListener('click', () => {
-    const open = menu.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    menu.classList.remove('open'); toggle.setAttribute('aria-expanded', false);
-  }));
-
-  document.getElementById('enquiry').addEventListener('submit', e => {
-    e.preventDefault();
-    const f = new FormData(e.target);
-    const body = `Name: ${f.get('name')}\nContact: ${f.get('contact')}\nArrive: ${f.get('arrive')}\nDepart: ${f.get('depart')}\nType: ${f.get('type')}\n\n${f.get('message')}`;
-    location.href = `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent('Booking enquiry – Baxter Mill')}&body=${encodeURIComponent(body)}`;
-  });
-</script>
+<script src="script.js"></script>
 </body>
 </html>
