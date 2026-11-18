@@ -80,10 +80,13 @@
     </svg>
     <!-- EDIT: put your photos in an "images" folder and list them here (first one shows first).
          Wide landscape photos work best. If none are listed, the drawn scene above is shown instead. -->
+    <!-- Drone video (plays silently on a loop). The photos below are shown instead
+         if the video can't play, or if a visitor's device is set to reduce motion. -->
+    <video class="hero-video" muted loop playsinline preload="none" poster="video/hero-poster.jpg" aria-hidden="true"></video>
     <div class="hero-slides" aria-hidden="true">
-      <img src="images/hero-1.jpg" alt="">
-      <img src="images/hero-2.jpg" alt="">
-      <img src="images/hero-3.jpg" alt="">
+      <img data-src="images/hero-1.jpg" alt="">
+      <img data-src="images/hero-2.jpg" alt="">
+      <img data-src="images/hero-3.jpg" alt="">
     </div>
     <div class="hero-dots" role="group" aria-label="Choose photo"></div>
     <div class="wrap hero-content">

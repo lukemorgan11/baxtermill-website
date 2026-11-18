@@ -110,6 +110,18 @@ p { margin: 0 0 1em; }
 .lead { font-size: clamp(1.05rem, 1.6vw, 1.25rem); max-width: 560px; color: rgba(246,241,231,.88); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 2rem; }
 
+/* Hero drone video */
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+.hero.has-video .hero-video { display: block; }
+.hero.has-video .hero-art, .hero.has-video .hero-slides { display: none; }
+.hero.has-video::after {
+  background:
+    linear-gradient(90deg, rgba(20,34,27,.6) 0%, rgba(20,34,27,.15) 60%, rgba(20,34,27,0) 100%),
+    linear-gradient(180deg, rgba(20,34,27,.45) 0%, rgba(20,34,27,0) 30%, rgba(20,34,27,.3) 100%);
+}
+.hero.has-video .hero-content { padding-bottom: 160px; }
+@media (max-width: 760px) { .hero.has-video .hero-content { padding-bottom: 120px; } }
+
 /* Hero photo slideshow */
 .hero-slides { position: absolute; inset: 0; overflow: hidden; }
 .hero-slides img {

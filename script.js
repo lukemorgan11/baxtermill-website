@@ -19,14 +19,41 @@ const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
-// Hero slideshow: uses whichever photos in .hero-slides actually load.
-// With none, the drawn scene stays on show.
+// Hero background: drone video first; photo slideshow if the video can't play
+// (or the visitor prefers reduced motion / data saving); drawn scene if neither.
 (() => {
   const SECONDS_PER_PHOTO = 6;
   const hero = document.querySelector('.hero');
   const dotsWrap = document.querySelector('.hero-dots');
-  const imgs = [...document.querySelectorAll('.hero-slides img')];
+  const video = document.querySelector('.hero-video');
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const saveData = navigator.connection && navigator.connection.saveData;
+
+  if (video && !reduceMotion && !saveData) {
+    video.src = innerWidth <= 820 ? 'video/hero-720.mp4' : 'video/hero-1080.mp4';
+    hero.classList.add('has-video');
+    video.addEventListener('error', fallBack, { once: true });
+    const p = video.play();
+    if (p) p.catch(err => { if (err.name !== 'AbortError') fallBack(); });
+    document.addEventListener('visibilitychange', () => {
+      if (!hero.classList.contains('has-video')) return;
+      document.hidden ? video.pause() : video.play().catch(() => {});
+    });
+  } else {
+    startSlideshow();
+  }
+
+  function fallBack() {
+    if (!hero.classList.contains('has-video')) return;
+    hero.classList.remove('has-video');
+    video.removeAttribute('src');
+    video.load();
+    startSlideshow();
+  }
+
+  function startSlideshow() {
+  const imgs = [...document.querySelectorAll('.hero-slides img')];
+  imgs.forEach(img => { if (img.dataset.src) img.src = img.dataset.src; });
 
   const loaded = img => new Promise(res => {
     if (img.complete) return res(img.naturalWidth > 0);
@@ -65,6 +92,7 @@ window.addEventListener('scroll', onScroll, { passive: true });
     show(0);
     start();
   });
+  }
 })();
 
 // Enquiry form -> pre-filled email
